@@ -1,3 +1,5 @@
+#패키지 설치
+
 import pyupbit
 import pprint
 
