@@ -1,8 +1,7 @@
 from tkinter import *
 import tkinter.font
-import pyupbit
 from tkinter import messagebox
-
+import webbrowser
 
 ## 함수 정의부분
 def clear_1(event):
@@ -19,6 +18,8 @@ def login():
     login_bt.configure(command = login)
     print(access, secret)
 
+def open_url(url):
+    webbrowser.open_new(url)
 
 ## 메인 코드
 # 1. 로그인 창
@@ -28,7 +29,7 @@ window.title("코인 자동매매 프로그램")
 # window.iconbitmap("") #아이콘 설정 가능한 코드
 window.config(bg="white")
 window.geometry("500x500")
-window.resizable(False, False) #창크기 고정
+window.resizable(False, False) #창크기 고정 코드
 
 # 폰트 설정
 step_font=tkinter.font.Font(family="고딕체", size=35, weight="bold")
@@ -50,8 +51,10 @@ login_bt = Button(window, text="로그인", font = ("고딕체", 20), width = 50
 login_bt.pack(padx = 40, pady = (10,35))
 
 label1= Label(window, text="로그인할 Upbit API가 없으신가요?", font=("고딕체", 9), fg="gray", bg="white")
+label1.bind("<Button-1>", lambda e: open_url("https://upbit.com/service_center/open_api_guide"))
+label1.bind("<Enter>", lambda e: label1.config(fg='white', bg='#03045e', cursor="hand2"))
+label1.bind("<Leave>", lambda e: label1.config(fg='#03045e', bg='white'))
 label1.pack()
-
 
 
 window.mainloop()
