@@ -28,7 +28,7 @@ window.title("코인 자동매매 프로그램")
 # window.iconbitmap("") #아이콘 설정 가능한 코드
 window.config(bg="white")
 window.geometry("500x500")
-# window.resizable(False, False) #창크기 고정 코드
+window.resizable(False, False) #창크기 고정
 
 # 폰트 설정
 step_font=tkinter.font.Font(family="고딕체", size=35, weight="bold")
@@ -38,7 +38,6 @@ step1.pack(padx = 40, pady = (70,5))
 
 api_input1 = Entry(window, font=("고딕체", 20), width=50, fg ="gray", bg ="white")
 api_input1.pack(padx = 40, pady = 15, ipadx = 10, ipady = 5)
-# api_input1.config(show="*") #글자 가리는 코드
 api_input1.insert(0, "access Key 입력")
 api_input1.bind("<Button-1>", clear_1)
 
