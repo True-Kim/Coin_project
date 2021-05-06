@@ -2,10 +2,11 @@ from tkinter import *
 import tkinter.font
 from tkinter import messagebox
 import webbrowser
+import pyupbit
 
 ## 함수 정의부분
 def clear_1(event):
-    api_input1.delete(0,len(api_input1.get())) # 로그인시 기본 문구를 지워줌
+    api_input1.delete(0,len(api_input1.get())) # 입력시 기본 문구를 지워줌
     api_input1.configure(show="*")
 
 def clear_2(event):
@@ -15,8 +16,16 @@ def clear_2(event):
 def login():
     access = api_input1.get()
     secret = api_input2.get()
-    login_bt.configure(command = login)
-    print(access, secret)
+
+    upbit = pyupbit.Upbit(access,secret)
+    mybtc = upbit.get_balance("KRW-BTC")
+
+    if mybtc is int:
+        messagebox.showinfo("로그인", "로그인 성공!")
+    else :
+        messagebox.showinfo("로그인", "로그인 실패!")
+        
+    print(upbit.get_balance("KRW-BTC"))
 
 def open_url(url):
     webbrowser.open_new(url)
@@ -48,6 +57,7 @@ api_input2.insert(0, "private Key 입력")
 api_input2.bind("<Button-1>", clear_2)
 
 login_bt = Button(window, text="로그인", font = ("고딕체", 20), width = 50, fg="white", bg="#115597")
+login_bt.configure(command = login)
 login_bt.pack(padx = 40, pady = (10,35))
 
 label1= Label(window, text="로그인할 Upbit API가 없으신가요?", font=("고딕체", 9), fg="gray", bg="white")
@@ -56,6 +66,4 @@ label1.bind("<Enter>", lambda e: label1.config(fg='white', bg='#03045e', cursor=
 label1.bind("<Leave>", lambda e: label1.config(fg='#03045e', bg='white'))
 label1.pack()
 
-
 window.mainloop()
-
