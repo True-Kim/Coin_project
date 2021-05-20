@@ -17,7 +17,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>비트코인 자동매매 프로그램</string>
+   <string>이더리움 자동매매 프로그램</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -55,7 +55,7 @@ border-radius : 10px;
      </font>
     </property>
     <property name="text">
-     <string>비트코인</string>
+     <string>이더리움</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
@@ -252,7 +252,7 @@ padding: 2px 5px;</string>
       </widget>
      </item>
      <item>
-      <widget class="QTableWidget" name="tableAsks">
+      <widget class="QTableWidget" name="tableWidget">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -395,7 +395,7 @@ padding: 2px 5px;</string>
       </widget>
      </item>
      <item>
-      <widget class="QTableWidget" name="tableBids">
+      <widget class="QTableWidget" name="tableWidget_2">
        <property name="acceptDrops">
         <bool>false</bool>
        </property>
@@ -506,8 +506,8 @@ padding: 2px 5px;</string>
      </item>
     </layout>
     <zorder>label_4</zorder>
-    <zorder>tableBids</zorder>
-    <zorder>tableAsks</zorder>
+    <zorder>tableWidget_2</zorder>
+    <zorder>tableWidget</zorder>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
@@ -676,7 +676,7 @@ padding: 2px 5px;</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>bitcoin_img.png</pixmap>
+     <pixmap>ethereum_img.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -753,32 +753,6 @@ border-radius : 0px;
 background: None;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="showButton">
-    <property name="geometry">
-     <rect>
-      <x>1020</x>
-      <y>40</y>
-      <width>151</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>맑은 고딕</family>
-      <pointsize>10</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color : #115579;
-border-radius : 3px;
-color : white;</string>
-    </property>
-    <property name="text">
-     <string>click show button !</string>
-    </property>
-   </widget>
    <zorder>widget_7</zorder>
    <zorder>widget_8</zorder>
    <zorder>widget_9</zorder>
@@ -789,7 +763,6 @@ color : white;</string>
    <zorder>layoutWidget</zorder>
    <zorder>label</zorder>
    <zorder>label_2</zorder>
-   <zorder>showButton</zorder>
   </widget>
  </widget>
  <resources/>

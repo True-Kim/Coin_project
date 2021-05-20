@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>비트코인 자동매매 프로그램</string>
+   <string>이더리움 자동매매 프로그램</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -254,8 +254,8 @@ text-decoration: underline;
      <y>379</y>
     </hint>
     <hint type="destinationlabel">
-     <x>423</x>
-     <y>368</y>
+     <x>429</x>
+     <y>390</y>
     </hint>
    </hints>
   </connection>
