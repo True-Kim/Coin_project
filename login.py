@@ -1,10 +1,10 @@
 import sys
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QWidget, QMessageBox
+from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QMessageBox
 import webbrowser
 import pyupbit
 
-class MainWidget(QWidget):
+class MainWidget(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
 
@@ -40,7 +40,7 @@ class MainWidget(QWidget):
         if  type(mybtc[0]) is list:
             QMessageBox.information(self, "연결 확인", "연결 성공!")
             self.ui.close()
-            self.ui = uic.loadUi("source/main.ui", self)
+            self.ui = uic.loadUi("source/new_main2.ui", self)
             self.ui.show()
 
         # 연결 실패시 실패 메시지 출력
