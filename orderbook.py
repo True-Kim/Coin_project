@@ -49,7 +49,7 @@ class OrderbookWidget(QWidget):
             item_2.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
             item_2.setStyleSheet("""
                 QProgressBar {background-color : rgba(0, 0, 0, 0);border : 0}
-                QProgressBar::Chunk {background-color : rgba(255, 0, 0, 0.5);border : 0}
+                QProgressBar::Chunk {background-color : #75b6de;border : 0}
             """)
             self.tableAsks.setCellWidget(i, 2, item_2)
             anim = QPropertyAnimation(item_2, b"value")
@@ -69,7 +69,7 @@ class OrderbookWidget(QWidget):
             item_2.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
             item_2.setStyleSheet("""
                 QProgressBar {background-color : rgba(0, 0, 0, 0);border : 1}
-                QProgressBar::Chunk {background-color : rgba(0, 255, 0, 0.4);border : 1}
+                QProgressBar::Chunk {background-color : #d57e88;border : 1}
             """)
             self.tableBids.setCellWidget(i, 2, item_2)
             anim = QPropertyAnimation(item_2, b"value")
