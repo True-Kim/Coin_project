@@ -154,7 +154,9 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color : rgb(225, 228, 255);</string>
+      <string notr="true">background-color : rgb(225, 228, 255);
+
+</string>
      </property>
      <property name="lineWidth">
       <number>0</number>
