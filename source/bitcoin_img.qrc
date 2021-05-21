@@ -1,5 +1,0 @@
-<RCC>
-  <qresource prefix="newPrefix_bit">
-    <file>bitcoin_img.png</file>
-  </qresource>
-</RCC>
