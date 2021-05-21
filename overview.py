@@ -32,7 +32,7 @@ class OverViewWorker(QThread):
 class OverviewWidget(QWidget):
     def __init__(self, parent=None, ticker="KRW-ETH", ):
         super().__init__(parent)
-        uic.loadUi("source/overview.ui", self)
+        uic.loadUi("overview.ui", self)
 
         self.ticker = ticker
         self.ovw = OverViewWorker(ticker)
@@ -53,11 +53,11 @@ class OverviewWidget(QWidget):
 
     def __updateStyle(self):
         if '-' in self.label_2.text():
-            self.label_1.setStyleSheet("color:blue;")
-            self.label_2.setStyleSheet("background-color:blue;color:white")
-        else:
             self.label_1.setStyleSheet("color:red;")
             self.label_2.setStyleSheet("background-color:red;color:white")
+        else:
+            self.label_1.setStyleSheet("color:blue;")
+            self.label_2.setStyleSheet("background-color:blue;color:white")
 
 if __name__ == "__main__":
     import sys
