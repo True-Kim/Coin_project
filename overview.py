@@ -32,7 +32,7 @@ class OverViewWorker(QThread):
 class OverviewWidget(QWidget):
     def __init__(self, parent=None, ticker="KRW-ETH", ):
         super().__init__(parent)
-        uic.loadUi("overview.ui", self)
+        uic.loadUi("source/overview.ui", self)
 
         self.ticker = ticker
         self.ovw = OverViewWorker(ticker)
