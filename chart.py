@@ -34,7 +34,7 @@ class PriceWorker(QThread):
 class ChartWidget(QWidget):   #추후 메인 GUI에 추가할 목적이므로 QWidget 클래스를 상속 ChartWidget클래스를 정의
     def __init__(self, parent=None, ticker="KRW-ETH"):   #파라미터 parent는 위젯이 그려질 위치를 지정하는데 사용, 입력하지 않으면 None #티커는 조회할 코인의 종류를 지정
         super().__init__(parent)
-        uic.loadUi("chart.ui", self)
+        uic.loadUi("source/chart.ui", self)
         self.ticker = ticker
         self.viewLimit = 128  #라인 차트로 그릴 데이터의 수를 미리 정의
 
