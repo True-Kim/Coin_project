@@ -32,7 +32,7 @@
        </property>
        <property name="font">
         <font>
-         <family>나눔고딕 ExtraBold</family>
+         <family>맑은 고딕</family>
          <pointsize>22</pointsize>
          <weight>75</weight>
          <italic>false</italic>
@@ -66,10 +66,10 @@
        </property>
        <property name="font">
         <font>
-         <family>나눔고딕 ExtraBold</family>
+         <family>맑은 고딕</family>
          <pointsize>11</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
+         <weight>50</weight>
+         <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
@@ -104,6 +104,7 @@
       <widget class="QLabel" name="label_3">
        <property name="font">
         <font>
+         <family>맑은 고딕</family>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -118,6 +119,11 @@
      </item>
      <item row="1" column="3">
       <widget class="QLabel" name="label_10">
+       <property name="font">
+        <font>
+         <family>맑은 고딕</family>
+        </font>
+       </property>
        <property name="text">
         <string>49,440,000</string>
        </property>
@@ -127,6 +133,7 @@
       <widget class="QLabel" name="label_9">
        <property name="font">
         <font>
+         <family>맑은 고딕</family>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -143,6 +150,7 @@
       <widget class="QLabel" name="label_7">
        <property name="font">
         <font>
+         <family>맑은 고딕</family>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -157,6 +165,11 @@
      </item>
      <item row="1" column="1">
       <widget class="QLabel" name="label_8">
+       <property name="font">
+        <font>
+         <family>맑은 고딕</family>
+        </font>
+       </property>
        <property name="text">
         <string>7,830.4 억</string>
        </property>
@@ -164,6 +177,11 @@
      </item>
      <item row="0" column="3">
       <widget class="QLabel" name="label_6">
+       <property name="font">
+        <font>
+         <family>맑은 고딕</family>
+        </font>
+       </property>
        <property name="text">
         <string>54,298,000</string>
        </property>
@@ -173,6 +191,7 @@
       <widget class="QLabel" name="label_5">
        <property name="font">
         <font>
+         <family>맑은 고딕</family>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -187,6 +206,11 @@
      </item>
      <item row="0" column="1">
       <widget class="QLabel" name="label_4">
+       <property name="font">
+        <font>
+         <family>맑은 고딕</family>
+        </font>
+       </property>
        <property name="text">
         <string>14,963,8166 BTC</string>
        </property>
@@ -196,6 +220,7 @@
       <widget class="QLabel" name="label_11">
        <property name="font">
         <font>
+         <family>맑은 고딕</family>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -210,6 +235,11 @@
      </item>
      <item row="2" column="1">
       <widget class="QLabel" name="label_12">
+       <property name="font">
+        <font>
+         <family>맑은 고딕</family>
+        </font>
+       </property>
        <property name="text">
         <string>93.28%</string>
        </property>
@@ -219,6 +249,7 @@
       <widget class="QLabel" name="label_13">
        <property name="font">
         <font>
+         <family>맑은 고딕</family>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -233,6 +264,11 @@
      </item>
      <item row="2" column="3">
       <widget class="QLabel" name="label_14">
+       <property name="font">
+        <font>
+         <family>맑은 고딕</family>
+        </font>
+       </property>
        <property name="text">
         <string>51,403,000</string>
        </property>
