@@ -207,6 +207,9 @@ background: None;</string>
         <property name="spacing">
          <number>5</number>
         </property>
+        <item>
+         <widget class="QTextEdit" name="textEdit"/>
+        </item>
        </layout>
       </widget>
       <widget class="QLabel" name="label_11">
@@ -337,10 +340,21 @@ background: None;</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color : #115579;
-border-radius : 3px;
-color : white;</string>
+       <string notr="true">QPushButton#pushButton{
+color : white;
+background-color : rgb(17, 85, 151);
+border-radius : 5px;
+}
+
+QPushButton#pushButton:pressed{
+background-color : rgb(17, 85, 120);
+background-position : calc(100%-10px)center;
+padding : 5px;
+}</string>
       </property>
       <property name="text">
        <string>시작</string>
@@ -363,10 +377,21 @@ color : white;</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color : #115579;
-border-radius : 3px;
-color : white;</string>
+       <string notr="true">QPushButton#pushButton_2{
+color : white;
+background-color : rgb(17, 85, 151);
+border-radius : 5px;
+}
+
+QPushButton#pushButton_2:pressed{
+background-color : rgb(17, 85, 120);
+background-position : calc(100%-10px)center;
+padding : 5px;
+}</string>
       </property>
       <property name="text">
        <string>종료</string>
@@ -398,5 +423,42 @@ color : white;</string>
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_clickStart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>130</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>10</x>
+     <y>-6</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_clickStop()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>323</x>
+     <y>188</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>283</x>
+     <y>-6</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slot_clickStart()</slot>
+  <slot>slot_clickStop()</slot>
+ </slots>
 </ui>
