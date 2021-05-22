@@ -67,7 +67,7 @@ class MainWidget(QMainWindow):
         super().__init__(parent)
 
         # 로그인 창
-        self.ui = uic.loadUi("login.ui", self)
+        self.ui = uic.loadUi("source/login.ui", self)
         self.ui.show()
     
     def slot_linked_browser(self):
