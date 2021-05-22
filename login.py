@@ -45,8 +45,8 @@ class VolatilityWorker(QThread):
                 if wait_flag == False:
                     current_price = pyupbit.get_current_price(self.ticker)
                     if (current_price > target_price) and (current_price > ma5):
-                        desc = buy_crypto_currency(self.bithumb, self.ticker)
-                        result = self.bithumb.get_order_completed(desc)
+                        desc = buy_crypto_currency(self.upbit, self.ticker)
+                        result = self.upbit.get_order_completed(desc)
                         timestamp = result['data']['order_date']
                         dt = datetime.datetime.fromtimestamp( int(int(timestamp)/1000000))
                     
