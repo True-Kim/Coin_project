@@ -31,7 +31,7 @@ class VolatilityWorker(QThread):
                     target_price = get_target_price(self.ticker)
                     mid = datetime.datetime(now.year, now.month, now.day) + datetime.timedelta(1)
                     ma5 = get_yesterday_ma5(self.ticker)
-                    desc = sell_crypto_currency(self.bithumb, self.ticker)
+                    desc = sell_crypto_currency(self.upbit, self.ticker)
 
                     result = self.upbit.get_order_completed(desc)
                     timestamp = result['data']['order_date']
