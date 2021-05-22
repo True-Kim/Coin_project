@@ -98,7 +98,7 @@ class MainWidget(QMainWindow):
         if  type(mybtc[0]) is list:
             QMessageBox.information(self, "연결 확인", "연결 성공!")
             self.ui.close()
-            self.ui = uic.loadUi("new_main2.ui", self)
+            self.ui = uic.loadUi("source/new_main2.ui", self)
             self.ui.show()
 
         # 연결 실패시 실패 메시지 출력
