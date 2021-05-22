@@ -18,7 +18,9 @@ class VolatilityWorker(QThread):
         self.alive = True
 
     def run(self):
+        # 현재시간
         now = datetime.datetime.now()
+        # 다음날 자정
         mid = datetime.datetime(now.year, now.month, now.day) + datetime.timedelta(1)
         ma5 = get_yesterday_ma5(self.ticker)
         target_price = get_target_price(self.ticker)
@@ -27,31 +29,27 @@ class VolatilityWorker(QThread):
         while self.alive:
             try:
                 now = datetime.datetime.now()
+                # 자정이 되면 target_price, 다음날 자정, 이동평균 갱신해라
                 if mid < now < mid + datetime.delta(seconds=10):
                     target_price = get_target_price(self.ticker)
                     mid = datetime.datetime(now.year, now.month, now.day) + datetime.timedelta(1)
                     ma5 = get_yesterday_ma5(self.ticker)
-                    desc = sell_crypto_currency(self.bithumb, self.ticker)
-
-                    result = self.upbit.get_order_completed(desc)
-                    timestamp = result['data']['order_date']
-                    dt = datetime.datetime.fromtimestamp( int(int(timestamp)/1000000) )
-
-                    tstring = dt.strftime("%Y/%m/%d %H:%M:%S")
-                    self.tradingSent.emit(tstring, "매도", result['data']['order_qty'])
+                    desc  = sell_crypto_currency(self.upbit, self.ticker)
+                    result = self.upbit.get_order(desc['uuid'])
+                    timestamp = result['created_at']
+                    self.tradingSent.emit(timestamp, "매도", result['volume'])
 
                     wait_flag = False
 
                 if wait_flag == False:
                     current_price = pyupbit.get_current_price(self.ticker)
+
+                    # 목표가격이 현재가보다 크고 이동평균이 현재가보다 작으면
                     if (current_price > target_price) and (current_price > ma5):
-                        desc = buy_crypto_currency(self.bithumb, self.ticker)
-                        result = self.bithumb.get_order_completed(desc)
-                        timestamp = result['data']['order_date']
-                        dt = datetime.datetime.fromtimestamp( int(int(timestamp)/1000000))
-                    
-                        tstring = dt.strftime("%Y/%m/%d %H:%M:%S")
-                        self.tradingSent.emit(tstring, "매수", result['data']['order_qty'])
+                        desc = buy_crypto_currency(self.upbit, self.ticker)
+                        result = self.upbit.get_order(desc['uuid'])
+                        timestamp = result['created_at']
+                        self.tradingSent.emit(timestamp, "매수", result['volume'])
                         wait_flag = True
             except: pass
 
@@ -91,7 +89,7 @@ class MainWidget(QMainWindow):
             f.write("\n"+ secret)
 
         upbit = pyupbit.Upbit(access,secret)
-        mybtc = upbit.get_balances("KRW-BTC")
+        mybtc = upbit.get_balances("KRW-ETH")
         # print(type(mybtc[0]))
 
         # 연결 성공시 로그인창 닫고 메인창 열기
@@ -115,24 +113,25 @@ class MainWidget(QMainWindow):
         
         self.upbit = pyupbit.Upbit(access, secret)
         self.ticker = "KRW-ETH"
-        balance = self.upbit.get_balance(self.ticker)
-        self.textEdit.append("------ START ------")
+        start_now = datetime.datetime.now()
+        self.textEdit.append(f"{start_now} 자동매매를 시작합니다.")
         self.vw = VolatilityWorker(self.ticker, self.upbit)
         self.vw.tradingSent.connect(self.receiveTradingSignal)
         self.vw.start()
 
     def slot_clickStop(self):
         self.vw.close()
-        self.textEdit.append("------- END -------")
+        stop_now = datetime.datetime.now()
+        self.textEdit.append(f"{stop_now} 자동매매를 종료합니다.")
     
     def receiveTradingSignal(self, time, type, amount):
         self.textEdit.append(f"[{time}] {type} : {amount}")
 
-    def closeEvent(self, event):
-        self.close()
+    # def closeEvent(self, event):
+    #     self.close()
 
 if __name__ == "__main__":
     # 프로그램 실행 코드
     app = QApplication(sys.argv)
     ow = MainWidget()
-    exit(app.exec_())
+    sys.exit(app.exec_())
