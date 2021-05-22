@@ -103,5 +103,3 @@ if __name__ == "__main__":
     cw = ChartWidget()
     cw.show()
     exit(app.exec_())
-
-    

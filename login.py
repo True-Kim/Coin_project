@@ -31,7 +31,7 @@ class VolatilityWorker(QThread):
                     target_price = get_target_price(self.ticker)
                     mid = datetime.datetime(now.year, now.month, now.day) + datetime.timedelta(1)
                     ma5 = get_yesterday_ma5(self.ticker)
-                    desc = sell_crypto_currency(self.upbit, self.ticker)
+                    desc = sell_crypto_currency(self.bithumb, self.ticker)
 
                     result = self.upbit.get_order_completed(desc)
                     timestamp = result['data']['order_date']
@@ -45,8 +45,8 @@ class VolatilityWorker(QThread):
                 if wait_flag == False:
                     current_price = pyupbit.get_current_price(self.ticker)
                     if (current_price > target_price) and (current_price > ma5):
-                        desc = buy_crypto_currency(self.upbit, self.ticker)
-                        result = self.upbit.get_order_completed(desc)
+                        desc = buy_crypto_currency(self.bithumb, self.ticker)
+                        result = self.bithumb.get_order_completed(desc)
                         timestamp = result['data']['order_date']
                         dt = datetime.datetime.fromtimestamp( int(int(timestamp)/1000000))
                     
@@ -67,7 +67,7 @@ class MainWidget(QMainWindow):
         super().__init__(parent)
 
         # 로그인 창
-        self.ui = uic.loadUi("source/login.ui", self)
+        self.ui = uic.loadUi("login.ui", self)
         self.ui.show()
     
     def slot_linked_browser(self):
@@ -98,7 +98,7 @@ class MainWidget(QMainWindow):
         if  type(mybtc[0]) is list:
             QMessageBox.information(self, "연결 확인", "연결 성공!")
             self.ui.close()
-            self.ui = uic.loadUi("source/new_main2.ui", self)
+            self.ui = uic.loadUi("new_main2.ui", self)
             self.ui.show()
 
         # 연결 실패시 실패 메시지 출력
@@ -136,4 +136,3 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     ow = MainWidget()
     exit(app.exec_())
-
