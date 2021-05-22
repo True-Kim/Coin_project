@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>비트코인 자동매매 프로그램</string>
+   <string>코인 자동매매 프로그램</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
