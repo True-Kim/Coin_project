@@ -114,6 +114,7 @@ class MainWidget(QMainWindow):
         self.upbit = pyupbit.Upbit(access, secret)
         self.ticker = "KRW-ETH"
         start_now = datetime.datetime.now()
+        start_now = start_now.strftime("%Y/%m/%d %H:%M:%S")
         self.textEdit.append(f"{start_now} 자동매매를 시작합니다.")
         self.vw = VolatilityWorker(self.ticker, self.upbit)
         self.vw.tradingSent.connect(self.receiveTradingSignal)
@@ -122,6 +123,7 @@ class MainWidget(QMainWindow):
     def slot_clickStop(self):
         self.vw.close()
         stop_now = datetime.datetime.now()
+        stop_now = stop_now.strftime("%Y/%m/%d %H:%M:%S")
         self.textEdit.append(f"{stop_now} 자동매매를 종료합니다.")
     
     def receiveTradingSignal(self, time, type, amount):
