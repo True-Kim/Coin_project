@@ -80,7 +80,7 @@ class MybalancesWidget(QWidget):
         price = pyupbit.get_current_price(self.ticker)
         for i in range(len(balances)):
             amount = float(balances[i]['avg_buy_price']) * (float(balances[i]['balance']) + float(balances[i]['locked']))#매수금액
-            amount2= price * (float(balances[i]['currency']))
+            amount2= price * (float(balances[i]['balance']))
 
 
             item_0 = self.tableBalances.item(i, 0)
