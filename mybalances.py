@@ -35,9 +35,9 @@ class MybalancesWorker(QThread):
 class MybalancesWidget(QWidget):
     def __init__(self, parent=None, ticker="KRW-ETH"):
         super().__init__(parent)
-        uic.loadUi("source/Mybalances.ui", self)
+        uic.loadUi("Mybalances.ui", self)
         self.ticker = ticker
-
+        
         for i in range(self.tableBalances.rowCount()):
             item_0 = QTableWidgetItem(str(""))
             item_0.setTextAlignment(Qt.AlignRight | Qt.AlignVCenter)
@@ -46,6 +46,23 @@ class MybalancesWidget(QWidget):
             item_1 = QTableWidgetItem(str(""))
             item_1.setTextAlignment(Qt.AlignRight | Qt.AlignVCenter)
             self.tableBalances.setItem(i, 1, item_1)
+
+            item_2 = QTableWidgetItem(str(""))
+            item_2.setTextAlignment(Qt.AlignRight | Qt.AlignVCenter)
+            self.tableBalances.setItem(i, 2, item_2)
+
+            item_3 = QTableWidgetItem(str(""))
+            item_3.setTextAlignment(Qt.AlignRight | Qt.AlignVCenter)
+            self.tableBalances.setItem(i, 3, item_3)
+
+            item_4 = QTableWidgetItem(str(""))
+            item_4.setTextAlignment(Qt.AlignRight | Qt.AlignVCenter)
+            self.tableBalances.setItem(i, 4, item_4)
+
+            item_5 = QTableWidgetItem(str(""))
+            item_5.setTextAlignment(Qt.AlignRight | Qt.AlignVCenter)
+            self.tableBalances.setItem(i, 5, item_5)
+
 
         self.ow = MybalancesWorker(self.ticker)
         self.ow.dataSent.connect(self.updateData)
@@ -60,19 +77,23 @@ class MybalancesWidget(QWidget):
 
         self.upbit = pyupbit.Upbit(access, secret)
         balances = self.upbit.get_balances()
-
+        price = pyupbit.get_current_price(self.ticker)
         for i in range(len(balances)):
+            amount = float(balances[i]['avg_buy_price']) * (float(balances[i]['balance']) + float(balances[i]['locked']))#매수금액
+            amount2= price * (float(balances[i]['currency']))
+
+
             item_0 = self.tableBalances.item(i, 0)
             item_0.setText(f"{balances[i]['currency']}")
             item_1 = self.tableBalances.item(i, 1)
-            item_1.setText(f"{balances[i]['balance']}")
-            item_2 = self.tableBalances.item(i, 0)
-            item_2.setText(f"{balances[i]['currency']}")
-            item_3 = self.tableBalances.item(i, 1)
-            item_3.setText(f"{balances[i]['balance']}")
-            item_4 = self.tableBalances.item(i, 0)
-            item_4.setText(f"{balances[i]['currency']}")
-            item_5 = self.tableBalances.item(i, 1)
+            item_1.setText(f"{balances[i]['balance']}"+f"{balances[i]['currency']}")
+            item_2 = self.tableBalances.item(i, 2)
+            item_2.setText(f"{balances[i]['avg_buy_price']}"+f"{balances[i]['unit_currency']}")
+            item_3 = self.tableBalances.item(i, 3)
+            item_3.setText(f"{str(amount2)}")
+            item_4 = self.tableBalances.item(i, 4)
+            item_4.setText(f"{str(amount)}")
+            item_5 = self.tableBalances.item(i, 5)
             item_5.setText(f"{balances[i]['balance']}")
 
 
