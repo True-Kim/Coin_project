@@ -32,10 +32,11 @@ class MybalancesWorker(QThread):
     def close(self):
         self.alive = False
 
+#문제점!! 이더리움으로 계산됨 이걸 내 잔고의 전체 티커 받아오기로 바꿔야함..
 class MybalancesWidget(QWidget):
-    def __init__(self, parent=None, ticker="KRW-ETH"):
+    def __init__(self, parent=None, ticker="KRW-ETH"):  
         super().__init__(parent)
-        uic.loadUi("Mybalances.ui", self)
+        uic.loadUi("source/Mybalances.ui", self)
         self.ticker = ticker
         
         for i in range(self.tableBalances.rowCount()):
@@ -63,6 +64,10 @@ class MybalancesWidget(QWidget):
             item_5.setTextAlignment(Qt.AlignRight | Qt.AlignVCenter)
             self.tableBalances.setItem(i, 5, item_5)
 
+            #item_6 = QTableWidgetItem(str(""))
+            #item_5.setTextAlignment(Qt.AlignRight | Qt.AlignVCenter)
+            #self.tableBalances.setItem(i, 6, item_6)
+
 
         self.ow = MybalancesWorker(self.ticker)
         self.ow.dataSent.connect(self.updateData)
@@ -78,9 +83,13 @@ class MybalancesWidget(QWidget):
         self.upbit = pyupbit.Upbit(access, secret)
         balances = self.upbit.get_balances()
         price = pyupbit.get_current_price(self.ticker)
-        for i in range(len(balances)):
+        for i in range(1, len(balances)):
             amount = float(balances[i]['avg_buy_price']) * (float(balances[i]['balance']) + float(balances[i]['locked']))#매수금액
-            amount2= price * (float(balances[i]['balance']))
+
+            amount2= price * (float(balances[i]['balance']))  #평가금액
+        
+        #문제점!! 수익률 계산법은 맞는거같은데 적용이 안됨.. 해결점..
+            #amount3 = float(amount)-float(amount2)/float(amount)*100
 
 
             item_0 = self.tableBalances.item(i, 0)
@@ -95,6 +104,8 @@ class MybalancesWidget(QWidget):
             item_4.setText(f"{str(amount)}")
             item_5 = self.tableBalances.item(i, 5)
             item_5.setText(f"{balances[i]['balance']}")
+            #item_6 = self.tableBalances.item(i, 6)
+            #item_6.setText(f"{str(amount3)}")
 
 
     def closeEvent(self, event):
