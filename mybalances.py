@@ -36,7 +36,7 @@ class MybalancesWorker(QThread):
 class MybalancesWidget(QWidget):
     def __init__(self, parent=None, ticker="KRW-ETH"):  
         super().__init__(parent)
-        uic.loadUi("source/Mybalances.ui", self)
+        uic.loadUi("source/mybalances.ui", self)
         self.ticker = ticker
         
         for i in range(self.tableBalances.rowCount()):
