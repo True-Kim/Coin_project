@@ -299,6 +299,9 @@ background: None;</string>
         <property name="spacing">
          <number>5</number>
         </property>
+        <item>
+         <widget class="MybalancesWidget" name="widget_3" native="true"/>
+        </item>
        </layout>
       </widget>
       <widget class="QLabel" name="label_15">
@@ -419,6 +422,12 @@ padding : 5px;
    <class>OverviewWidget</class>
    <extends>QWidget</extends>
    <header>overview</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MybalancesWidget</class>
+   <extends>QWidget</extends>
+   <header>mybalances</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
