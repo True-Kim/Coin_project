@@ -5,7 +5,7 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QTableWidgetItem
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
-from pyupbit.quotation_api import get_current_price
+# from pyupbit.quotation_api import get_current_price
 
 
 class MybalancesWorker(QThread):
@@ -111,7 +111,8 @@ class MybalancesWidget(QWidget):
                         item_2.setText(f"{balances[i]['avg_buy_price']}"+f"{balances[i]['unit_currency']}")
 
                         # 3) 평가금액
-                        amount2= price * (float(balances[i]['balance'])+float(balances[i]['locked']))  # 현재가 * (주문가능 금액 + 주문 묶여있는 금액)
+                        amount2 = price * (float(balances[i]['balance'])+float(balances[i]['locked']))  # 현재가 * (주문가능 금액 + 주문 묶여있는 금액)
+
                         item_3 = self.tableBalances.item(i, 3)
                         item_3.setText(f"{int(amount2)}"+f"{balances[i]['unit_currency']}")
 
