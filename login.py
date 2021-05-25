@@ -21,7 +21,7 @@ class VolatilityWorker(QThread):
         # 현재시간
         now = datetime.datetime.now()
         # 다음날 자정
-        mid = datetime.datetime(now.year, now.month, now.day) + datetime.timedelta(1)
+        mid = datetime.datetime(now.year, now.month, now.day) + datetime.timedelta(hours=9)
         ma5 = get_yesterday_ma5(self.ticker)
         target_price = get_target_price(self.ticker)
         wait_flag = False
@@ -32,7 +32,7 @@ class VolatilityWorker(QThread):
                 # 자정이 되면 target_price, 다음날 자정, 이동평균 갱신해라
                 if mid < now < mid + datetime.delta(seconds=10):
                     target_price = get_target_price(self.ticker)
-                    mid = datetime.datetime(now.year, now.month, now.day) + datetime.timedelta(1)
+                    mid = datetime.datetime(now.year, now.month, now.day) + datetime.timedelta(hours=9)
                     ma5 = get_yesterday_ma5(self.ticker)
                     desc  = sell_crypto_currency(self.upbit, self.ticker)
                     result = self.upbit.get_order(desc['uuid'])
