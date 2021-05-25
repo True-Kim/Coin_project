@@ -6,9 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>731</width>
-    <height>417</height>
+    <width>559</width>
+    <height>348</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1500</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>9</pointsize>
+    <weight>50</weight>
+    <italic>false</italic>
+    <bold>false</bold>
+    <underline>false</underline>
+    <kerning>true</kerning>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Form</string>
@@ -18,12 +34,15 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>711</width>
-     <height>401</height>
+     <width>571</width>
+     <height>331</height>
     </rect>
    </property>
+   <property name="autoScrollMargin">
+    <number>10</number>
+   </property>
    <property name="rowCount">
-    <number>100</number>
+    <number>9</number>
    </property>
    <property name="columnCount">
     <number>7</number>
@@ -31,100 +50,12 @@
    <attribute name="horizontalHeaderVisible">
     <bool>true</bool>
    </attribute>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>77</number>
+   </attribute>
    <attribute name="verticalHeaderVisible">
     <bool>false</bool>
    </attribute>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
    <row/>
    <row/>
    <row/>
