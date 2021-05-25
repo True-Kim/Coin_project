@@ -118,7 +118,7 @@ class MybalancesWidget(QWidget):
                         # 4) 매수금액
                         amount3 = round(float(balances[i]['avg_buy_price']) * (float(balances[i]['balance']) + float(balances[i]['locked']))) # 매수평균가 * (주문가능 금액 + 주문 묶여있는 금액) 반올림
                         item_4 = self.tableBalances.item(i, 4)
-                        item_4.setText(f"{str(amount3)}")
+                        item_4.setText(f"{str(amount3)} 원")
 
                         # 5) 평가손익
                         amount4 = round(amount2 - amount3, 2) # 평가금액 - 매수금액 -> 소수 둘째자리까지 반올림
