@@ -86,15 +86,14 @@ class MybalancesWidget(QWidget):
 
         # 업비트가 지원하는 모든 원화마켓 가져오기
         krw_market = pyupbit.get_tickers(fiat="KRW")
-
+        
         for j in range(len(balances)):
             ticker= "KRW-"+balances[j]['currency']
             
             # 지원하는 원화마켓과 다른 티커는 제외(비상장 코인이나 KRW-KRW문제)
             if ticker in krw_market:
+                price = pyupbit.get_current_price(ticker)
                 for i in range(len(balances)):
-                    price = pyupbit.get_current_price(ticker)
-
                     # 0) 코인명 
                     item_0 = self.tableBalances.item(i, 0)
                     item_0.setText(f"{balances[i]['currency']}")
@@ -103,9 +102,9 @@ class MybalancesWidget(QWidget):
                     item_1 = self.tableBalances.item(i, 1)
                     amount1 = float(balances[i]['balance']) + float(balances[i]['locked'])
                     item_1.setText(f"{amount1}")
-
-                    if balances[i]['currency'] != 'KRW':
-
+                    
+                    if "KRW-"+balances[i]['currency'] not in krw_market : pass
+                    else :
                         # 2) 매수평균가
                         item_2 = self.tableBalances.item(i, 2)
                         item_2.setText(f"{balances[i]['avg_buy_price']}"+f"{balances[i]['unit_currency']}")
@@ -133,8 +132,6 @@ class MybalancesWidget(QWidget):
                             item_6.setText(f"{str(amount5)} %")
 
                         except: pass
-                    else : pass
-
 
     def closeEvent(self, event):
         self.ow.close()
@@ -147,3 +144,4 @@ if __name__ == "__main__":
     ow = MybalancesWidget()
     ow.show()
     exit(app.exec_())
+
