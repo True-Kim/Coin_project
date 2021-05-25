@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1281</width>
+    <width>1457</width>
     <height>872</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1286</width>
+      <width>1441</width>
       <height>890</height>
      </rect>
     </property>
@@ -31,7 +31,7 @@
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>1261</width>
+       <width>1431</width>
        <height>831</height>
       </rect>
      </property>
@@ -43,7 +43,7 @@ border-radius : 10px;</string>
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>40</y>
+        <y>80</y>
         <width>311</width>
         <height>31</height>
        </rect>
@@ -64,7 +64,7 @@ border-radius : 10px;</string>
      <widget class="QWidget" name="widget_12" native="true">
       <property name="geometry">
        <rect>
-        <x>890</x>
+        <x>1060</x>
         <y>80</y>
         <width>331</width>
         <height>281</height>
@@ -123,7 +123,7 @@ border-radius : 0px;</string>
      <widget class="QWidget" name="widget_18" native="true">
       <property name="geometry">
        <rect>
-        <x>460</x>
+        <x>620</x>
         <y>80</y>
         <width>421</width>
         <height>711</height>
@@ -180,7 +180,7 @@ background: None;</string>
      <widget class="QWidget" name="widget_19" native="true">
       <property name="geometry">
        <rect>
-        <x>890</x>
+        <x>1060</x>
         <y>370</y>
         <width>331</width>
         <height>421</height>
@@ -239,7 +239,7 @@ background: None;</string>
        <rect>
         <x>30</x>
         <y>220</y>
-        <width>421</width>
+        <width>571</width>
         <height>211</height>
        </rect>
       </property>
@@ -255,7 +255,7 @@ border-radius : 0px;</string>
         <rect>
          <x>10</x>
          <y>10</y>
-         <width>401</width>
+         <width>551</width>
          <height>191</height>
         </rect>
        </property>
@@ -274,7 +274,7 @@ border-radius : 0px;</string>
        <rect>
         <x>30</x>
         <y>450</y>
-        <width>421</width>
+        <width>571</width>
         <height>341</height>
        </rect>
       </property>
@@ -291,13 +291,16 @@ background: None;</string>
         <rect>
          <x>10</x>
          <y>40</y>
-         <width>401</width>
+         <width>551</width>
          <height>291</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_12">
         <property name="spacing">
          <number>5</number>
+        </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMaximumSize</enum>
         </property>
         <item>
          <widget class="MybalancesWidget" name="widget_3" native="true"/>
@@ -309,7 +312,7 @@ background: None;</string>
         <rect>
          <x>10</x>
          <y>10</y>
-         <width>401</width>
+         <width>551</width>
          <height>25</height>
         </rect>
        </property>
@@ -329,7 +332,7 @@ background: None;</string>
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>44</x>
+        <x>124</x>
         <y>160</y>
         <width>191</width>
         <height>41</height>
@@ -360,13 +363,13 @@ padding : 5px;
 }</string>
       </property>
       <property name="text">
-       <string>시작</string>
+       <string>매매시작</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>250</x>
+        <x>330</x>
         <y>160</y>
         <width>191</width>
         <height>41</height>
@@ -397,7 +400,7 @@ padding : 5px;
 }</string>
       </property>
       <property name="text">
-       <string>종료</string>
+       <string>매매종료</string>
       </property>
      </widget>
     </widget>
