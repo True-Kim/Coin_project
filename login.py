@@ -8,7 +8,7 @@ from volatility import *
 import datetime
 import time
 
-# main thread
+# thread 정의
 class VolatilityWorker(QThread):
     tradingSent = pyqtSignal(str, str, str)
 
