@@ -8,6 +8,7 @@ from volatility import *
 import datetime
 import time
 
+# main thread
 class VolatilityWorker(QThread):
     tradingSent = pyqtSignal(str, str, str)
 
@@ -20,7 +21,7 @@ class VolatilityWorker(QThread):
     def run(self):
         # 현재시간
         now = datetime.datetime.now()
-        # 다음날 자정
+        # 다음날 오전 9시
         mid = datetime.datetime(now.year, now.month, now.day) + datetime.timedelta(hours=9)
         ma5 = get_yesterday_ma5(self.ticker)
         target_price = get_target_price(self.ticker)
@@ -29,7 +30,7 @@ class VolatilityWorker(QThread):
         while self.alive:
             try:
                 now = datetime.datetime.now()
-                # 자정이 되면 target_price, 다음날 자정, 이동평균 갱신해라
+                # 다음날 오전 9시가 되면 target_price, 다음날 9시와 이동평균을 갱신하고 가진을 코인을 전부 시장가 매도
                 if mid < now < mid + datetime.delta(seconds=10):
                     target_price = get_target_price(self.ticker)
                     mid = datetime.datetime(now.year, now.month, now.day) + datetime.timedelta(hours=9)
@@ -38,7 +39,6 @@ class VolatilityWorker(QThread):
                     result = self.upbit.get_order(desc['uuid'])
                     timestamp = result['created_at']
                     self.tradingSent.emit(timestamp, "매도", result['volume'])
-
                     wait_flag = False
 
                 if wait_flag == False:
@@ -46,6 +46,7 @@ class VolatilityWorker(QThread):
 
                     # 목표가격이 현재가보다 크고 이동평균이 현재가보다 작으면
                     if (current_price > target_price) and (current_price > ma5):
+                        # 시장가 매수
                         desc = buy_crypto_currency(self.upbit, self.ticker)
                         result = self.upbit.get_order(desc['uuid'])
                         timestamp = result['created_at']
@@ -106,8 +107,8 @@ class MainWidget(QMainWindow):
 
     def slot_clickStart(self):
         f = open("api.txt")
-        lines = f.readlines()   # 모든 라인 읽어오기
-        access = lines[0].strip()  # 0번째 줄 가져오기 strip()메소드를 사용해 '\n'을 없애기.
+        lines = f.readlines() # 모든 라인 읽어오기
+        access = lines[0].strip()
         secret = lines[1].strip()
         f.close()
         
@@ -117,7 +118,7 @@ class MainWidget(QMainWindow):
         start_now = start_now.strftime("%Y/%m/%d %H:%M:%S")
         self.textEdit.append(f"{start_now} 자동매매를 시작합니다.")
         self.vw = VolatilityWorker(self.ticker, self.upbit)
-        self.vw.tradingSent.connect(self.receiveTradingSignal)
+        self.vw.tradingSent.connect(self.slot_tradingSignal)
         self.vw.start()
 
     def slot_clickStop(self):
@@ -126,7 +127,7 @@ class MainWidget(QMainWindow):
         stop_now = stop_now.strftime("%Y/%m/%d %H:%M:%S")
         self.textEdit.append(f"{stop_now} 자동매매를 종료합니다.")
     
-    def receiveTradingSignal(self, time, type, amount):
+    def slot_tradingSignal(self, time, type, amount):
         self.textEdit.append(f"[{time}] {type} : {amount}")
 
     # def closeEvent(self, event):
