@@ -53,11 +53,11 @@ class OverviewWidget(QWidget):
 
     def __updateStyle(self):
         if '-' in self.label_2.text():
-            self.label_1.setStyleSheet("color:red;")
-            self.label_2.setStyleSheet("background-color:red;color:white")
+            self.label_1.setStyleSheet("color:#da7f8f;")
+            self.label_2.setStyleSheet("background-color:#da7f8f;color:white")
         else:
-            self.label_1.setStyleSheet("color:blue;")
-            self.label_2.setStyleSheet("background-color:blue;color:white")
+            self.label_1.setStyleSheet("color:#334443;")
+            self.label_2.setStyleSheet("background-color:#334443;color:white")
 
 if __name__ == "__main__":
     import sys
