@@ -7,11 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>490</width>
-    <height>149</height>
+    <height>181</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #e1e5ea;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -43,7 +46,9 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color:blue;</string>
+        <string notr="true">color:#21094e;
+background-color: #e1e5ea;
+border : None;</string>
        </property>
        <property name="text">
         <string>54,070,000</string>
@@ -73,7 +78,7 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color:blue;color:white</string>
+        <string notr="true">background-color:#21094e;color:white</string>
        </property>
        <property name="text">
         <string>+5.17%</string>
@@ -110,7 +115,8 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color:gray</string>
+        <string notr="true">color:white;
+background-color: #a7bbc7;</string>
        </property>
        <property name="text">
         <string>거래량(24H)</string>
@@ -123,6 +129,9 @@
         <font>
          <family>맑은 고딕</family>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border : None;</string>
        </property>
        <property name="text">
         <string>49,440,000</string>
@@ -139,7 +148,8 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color:gray</string>
+        <string notr="true">color:white;
+background-color: #a7bbc7;</string>
        </property>
        <property name="text">
         <string>저가(당일)</string>
@@ -156,7 +166,8 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color:gray</string>
+        <string notr="true">color:white;
+background-color: #a7bbc7;</string>
        </property>
        <property name="text">
         <string>거래금액(24H)</string>
@@ -170,6 +181,9 @@
          <family>맑은 고딕</family>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">border : None;</string>
+       </property>
        <property name="text">
         <string>7,830.4 억</string>
        </property>
@@ -181,6 +195,9 @@
         <font>
          <family>맑은 고딕</family>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border : None;</string>
        </property>
        <property name="text">
         <string>54,298,000</string>
@@ -197,7 +214,8 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color:gray</string>
+        <string notr="true">color:white;
+background-color: #a7bbc7;</string>
        </property>
        <property name="text">
         <string>고가(당일)</string>
@@ -210,6 +228,9 @@
         <font>
          <family>맑은 고딕</family>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border : None;</string>
        </property>
        <property name="text">
         <string>14,963,8166 BTC</string>
@@ -226,7 +247,8 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color:gray</string>
+        <string notr="true">color:white;
+background-color: #a7bbc7;</string>
        </property>
        <property name="text">
         <string>체결강도(24H)</string>
@@ -239,6 +261,9 @@
         <font>
          <family>맑은 고딕</family>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border : None;</string>
        </property>
        <property name="text">
         <string>93.28%</string>
@@ -255,7 +280,8 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color:gray</string>
+        <string notr="true">color:white;
+background-color: #a7bbc7;</string>
        </property>
        <property name="text">
         <string>전일종가</string>
@@ -268,6 +294,9 @@
         <font>
          <family>맑은 고딕</family>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border : None;</string>
        </property>
        <property name="text">
         <string>51,403,000</string>

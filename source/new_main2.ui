@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1457</width>
-    <height>872</height>
+    <width>1455</width>
+    <height>867</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">background-color:#faf3f3;</string>
     </property>
     <widget class="QWidget" name="widget_2" native="true">
      <property name="geometry">
@@ -36,26 +36,29 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:white;
+      <string notr="true">background-color:#faf3f3;
 border-radius : 10px;</string>
      </property>
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>80</y>
-        <width>311</width>
-        <height>31</height>
+        <y>30</y>
+        <width>531</width>
+        <height>71</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>맑은 고딕</family>
-        <pointsize>17</pointsize>
+        <pointsize>30</pointsize>
         <weight>75</weight>
         <bold>true</bold>
         <kerning>false</kerning>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:#0f3057;</string>
       </property>
       <property name="text">
        <string>업비트 코인 자동매매 시스템</string>
@@ -74,8 +77,9 @@ border-radius : 10px;</string>
        <enum>Qt::DefaultContextMenu</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">border : 1px solid rgb(230, 230, 230);
-border-radius : 0px;</string>
+       <string notr="true">border : 1px solid #e1e5ea;
+border-radius : 10px;
+background-color:  #e1e5ea;</string>
       </property>
       <widget class="QWidget" name="layoutWidget_5">
        <property name="geometry">
@@ -113,7 +117,10 @@ border-radius : 0px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true"/>
+        <string notr="true">border-radius : 0px;
+border : None;
+background : None;
+color: #0f3057;</string>
        </property>
        <property name="text">
         <string>이더리움</string>
@@ -133,9 +140,9 @@ border-radius : 0px;</string>
        <enum>Qt::DefaultContextMenu</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">border : 1px solid rgb(230, 230, 230);
-border-radius : 0px;
-background: None;</string>
+       <string notr="true">border : 1px solid  #faf3f3;
+border-radius : 10px;
+background-color:  #faf3f3;</string>
       </property>
       <widget class="QWidget" name="layoutWidget_6">
        <property name="geometry">
@@ -151,7 +158,12 @@ background: None;</string>
          <number>5</number>
         </property>
         <item>
-         <widget class="OrderbookWidget" name="widget_14" native="true"/>
+         <widget class="OrderbookWidget" name="widget_14" native="true">
+          <property name="styleSheet">
+           <string notr="true">border-radius : 0px;
+border : None;</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -172,6 +184,12 @@ background: None;</string>
          <bold>true</bold>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius : 0px;
+border : None;
+background : None;
+color: #0f3057;</string>
+       </property>
        <property name="text">
         <string>호가</string>
        </property>
@@ -190,9 +208,9 @@ background: None;</string>
        <enum>Qt::DefaultContextMenu</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">border : 1px solid rgb(230, 230, 230);
-border-radius : 0px;
-background: None;</string>
+       <string notr="true">border : 1px solid  rgba(167, 187, 199,50);
+border-radius : 10px;
+background-color: rgba(167, 187, 199,50);</string>
       </property>
       <widget class="QWidget" name="layoutWidget_7">
        <property name="geometry">
@@ -229,6 +247,12 @@ background: None;</string>
          <bold>true</bold>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius : 0px;
+border : None;
+background : None;
+color: #0f3057;</string>
+       </property>
        <property name="text">
         <string>자동매매 거래내역</string>
        </property>
@@ -248,7 +272,8 @@ background: None;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">border : 1px solid rgb(230, 230, 230);
-border-radius : 0px;</string>
+border-radius : 0px;
+background-color: #e1e5ea;</string>
       </property>
       <widget class="QWidget" name="layoutWidget_10">
        <property name="geometry">
@@ -282,9 +307,10 @@ border-radius : 0px;</string>
        <enum>Qt::DefaultContextMenu</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">border : 1px solid rgb(230, 230, 230);
+       <string notr="true">border : 1px solid white;
 border-radius : 0px;
-background: None;</string>
+background-color:  white;
+</string>
       </property>
       <widget class="QWidget" name="layoutWidget_12">
        <property name="geometry">
@@ -324,6 +350,9 @@ background: None;</string>
          <bold>true</bold>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <property name="text">
         <string>내 보유코인</string>
        </property>
@@ -332,8 +361,8 @@ background: None;</string>
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>124</x>
-        <y>160</y>
+        <x>90</x>
+        <y>140</y>
         <width>191</width>
         <height>41</height>
        </rect>
@@ -352,12 +381,12 @@ background: None;</string>
       <property name="styleSheet">
        <string notr="true">QPushButton#pushButton{
 color : white;
-background-color : rgb(17, 85, 151);
+background-color : #da7f8f;
 border-radius : 5px;
 }
 
 QPushButton#pushButton:pressed{
-background-color : rgb(17, 85, 120);
+background-color : #da7f8f;
 background-position : calc(100%-10px)center;
 padding : 5px;
 }</string>
@@ -369,8 +398,8 @@ padding : 5px;
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>160</y>
+        <x>320</x>
+        <y>140</y>
         <width>191</width>
         <height>41</height>
        </rect>
@@ -389,12 +418,12 @@ padding : 5px;
       <property name="styleSheet">
        <string notr="true">QPushButton#pushButton_2{
 color : white;
-background-color : rgb(17, 85, 151);
+background-color : #da7f8f;
 border-radius : 5px;
 }
 
 QPushButton#pushButton_2:pressed{
-background-color : rgb(17, 85, 120);
+background-color : #da7f8f;
 background-position : calc(100%-10px)center;
 padding : 5px;
 }</string>

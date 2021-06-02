@@ -57,7 +57,7 @@
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color : rgb(255, 224, 224);</string>
+      <string notr="true">background-color : rgba(218, 127, 143, 50);</string>
      </property>
      <property name="lineWidth">
       <number>0</number>
@@ -154,7 +154,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color : rgb(225, 228, 255);
+      <string notr="true">background-color : #e1e5ea;
 
 </string>
      </property>
