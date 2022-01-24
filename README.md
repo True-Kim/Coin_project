@@ -1,4 +1,4 @@
-**coin_project**
+### coin_project
 <br>
 2021-01 오픈소스프로젝트_과제 안녕하세요팀
 <br><br>
